@@ -10,6 +10,8 @@ foo.*
 data
 
 *.swp
+*.lock
+*lock.json
 
 # Compiled Lua sources
 luac.out
