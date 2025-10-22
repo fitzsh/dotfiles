@@ -51,6 +51,16 @@ _fzf_comprun() {
 
 source <(fzf --zsh)
 
+# Shell wrapper for Yazi file browser.
+# Use 'y' instead of 'yazi'
+# 'q' quits Yazi and changes CWD to last dir in Yazi, 'Q', to quit without changing CWD
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
+	rm -f -- "$tmp"
+}
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
