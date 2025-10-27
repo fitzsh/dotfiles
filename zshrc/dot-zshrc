@@ -132,3 +132,4 @@ bindkey -M viins '\es' sesh-sessions
 
 # Starship prompt
 eval "$(starship init zsh)"
+export PATH="$HOME/.local/bin:$PATH"
