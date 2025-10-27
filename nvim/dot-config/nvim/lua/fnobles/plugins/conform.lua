@@ -5,12 +5,12 @@ return {
 	keys = {
 		{
 			-- Customize or remove this keymap to your liking
-			"<leader>gf",
+			"<leader>cf",
 			function()
-				require("conform").format({ async = true })
+				require("conform").format({ async = true, timeout_ms = 500 })
 			end,
-			mode = "",
-			desc = "Format buffer",
+			mode = "n",
+			desc = "Format current file",
 		},
 	},
 	-- This will provide type hinting with LuaLS
@@ -22,9 +22,12 @@ return {
 			lua = { "stylua" },
 			python = { "isort", "black" },
 			javascript = { "prettierd", "prettier", stop_after_first = true },
+			typescript = { "prettierd", "prettier", stop_after_first = true },
+			css = { "prettierd", "prettier", stop_after_first = true },
 		},
 		-- Set default options
 		default_format_opts = {
+			timeout_ms = 500,
 			lsp_format = "fallback",
 		},
 		-- Set up format-on-save
