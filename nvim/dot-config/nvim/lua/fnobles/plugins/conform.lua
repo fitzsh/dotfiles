@@ -5,7 +5,7 @@ return {
 	keys = {
 		{
 			-- Customize or remove this keymap to your liking
-			"<leader>cf",
+			"<leader>=",
 			function()
 				require("conform").format({ async = true, timeout_ms = 500 })
 			end,
@@ -23,7 +23,15 @@ return {
 			python = { "isort", "black" },
 			javascript = { "prettierd", "prettier", stop_after_first = true },
 			typescript = { "prettierd", "prettier", stop_after_first = true },
+			typescriptreact = { "prettierd", "prettier", stop_after_first = true },
+			json = { "prettierd", "prettier", stop_after_first = true },
 			css = { "prettierd", "prettier", stop_after_first = true },
+			graphql = { "prettierd", "prettier", stop_after_first = true },
+			md = { "prettierd", "prettier", stop_after_first = true },
+			mdx = { "prettierd", "prettier", stop_after_first = true },
+			astro = { "prettierd", "prettier", stop_after_first = true },
+			bash = { "beautysh" },
+			toml = { "tombi" },
 		},
 		-- Set default options
 		default_format_opts = {
