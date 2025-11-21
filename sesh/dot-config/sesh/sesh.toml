@@ -1,10 +1,10 @@
 #
-# ███████╗███████╗███████╗██╗  ██╗     ██████╗ ██████╗ ███╗   ██╗███████╗██╗ ██████╗ 
-# ██╔════╝██╔════╝██╔════╝██║  ██║    ██╔════╝██╔═══██╗████╗  ██║██╔════╝██║██╔════╝ 
+# ███████╗███████╗███████╗██╗  ██╗     ██████╗ ██████╗ ███╗   ██╗███████╗██╗ ██████╗
+# ██╔════╝██╔════╝██╔════╝██║  ██║    ██╔════╝██╔═══██╗████╗  ██║██╔════╝██║██╔════╝
 # ███████╗█████╗  ███████╗███████║    ██║     ██║   ██║██╔██╗ ██║█████╗  ██║██║  ███╗
 # ╚════██║██╔══╝  ╚════██║██╔══██║    ██║     ██║   ██║██║╚██╗██║██╔══╝  ██║██║   ██║
 # ███████║███████╗███████║██║  ██║    ╚██████╗╚██████╔╝██║ ╚████║██║     ██║╚██████╔╝
-# ╚══════╝╚══════╝╚══════╝╚═╝  ╚═╝     ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝     ╚═╝ ╚═════╝ 
+# ╚══════╝╚══════╝╚══════╝╚═╝  ╚═╝     ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝     ╚═╝ ╚═════╝
 #
 # Smart session manager for the terminal
 # https://github.com/joshmedeski/sesh
@@ -13,38 +13,48 @@ strict_mode = false
 
 [default_session]
 startup_command = "nvim +GoToFile"
-preview_command = "eza --all --git --icons --color=always {}"
-# startup_command_ignore_dirs = ["~/repos", "~/.config"]
+preview_command = "eza -1 --all --git --icons --color=always {}"
 
 [[session]]
-name = "Downloads 💾"
+name = " home"
+path = "~"
+disable_startup_command = true
+
+[[session]]
+name = " downloads"
 path = "~/Downloads"
 startup_command = "y"
 
 [[session]]
-name = "Home 🏡"
+name = "󰩃 frenchie_com"
+path = "~/github/frenchiebulldog/frenchie"
+preview_command = "bat --language=md --style=snip --color=always ~/github/frenchiebulldog/frenchie/README.md"
+
+[[session]]
+name = "󰊠 ghostty config"
+path = "~/.config/ghostty/"
+preview_command = "bat --language=bash --style=snip --color=always ~/.config/ghostty/config"
+startup_command = "nvim config"
+
+[[session]]
+name = " zshrc config"
 path = "~"
-startup_command = "ls"
+preview_command = "bat --language=bash --style=snip --color=always ~/.zshrc"
+startup_command = "nvim ~/.zshrc"
 
 [[session]]
-name = "fitz.sh "
-path = "~/github/fitzsh"
-startup_command = "ls"
+name = " neovim config"
+path = "~/.config/nvim/"
+startup_command = "nvim ."
 
 [[session]]
-name = "tmux config "
-path = "~/.config/tmux"
-startup_command = "nvim tmux.conf"
-preview_command = "bat --color-always ~/.config/tmux/tmux.conf"
-
-[[session]]
-name = "sesh config "
-path = "~/.config/sesh"
+name = "󱐋 sesh config"
+path = "~/.config/sesh/"
 startup_command = "nvim sesh.toml"
-preview_command = "bat --color-always ~/.config/sesh/sesh.toml"
+preview_command = "bat --language=toml --style=snip --color=always ~/.config/sesh/sesh.toml"
 
 [[session]]
-name = "zshrc config"
-path = "~"
-startup_command = "nvim .zshrc"
-preview_command = "bat --color-always ~/.zshrc"
+name = " tmux config"
+path = "~/.config/tmux/"
+startup_command = "nvim tmux.conf"
+preview_command = "bat --language=bash --style=snip --color=always ~/.config/tmux/tmux.conf"
