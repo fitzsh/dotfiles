@@ -1,7 +1,6 @@
 # Zoxide - smarter cd command
 eval "$(zoxide init --cmd cd zsh)"
 export EDITOR="nvim"
-
 # FZF
 # Open in tmux popup if on tmux, otherwise use --height mode
 # Add Catppuccin theme to FZF
@@ -79,6 +78,7 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 # Default tool aliases
 alias cat='bat'
 eval "$(batman --export-env)"
+alias gg='lazygit'
 # File aliases
 alias cp='cp -iv'
 alias mv='mv -iv'
