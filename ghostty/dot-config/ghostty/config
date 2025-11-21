@@ -1,12 +1,25 @@
+/* vim: set filetype=bash : */
 maximize = true
 shell-integration-features = ssh-env,ssh-terminfo
 background-opacity = 0.85
 background-blur = 16
 theme = catppuccin-mocha.conf
 font-size = 16
-font-family = JetBrainsMono Nerd Font Mono
+font-family = JetBrainsMono Nerd Font
+font-style = Medium
+font-style-bold = ExtraBold
+font-style-italic = Medium Italic
+font-style-bold-italic = ExtraBold Italic
 macos-option-as-alt = true
 mouse-hide-while-typing = true
+
+# Open tmux session picker 
+keybind = super+k=text:\x13T
+# Split tmux window vertically
+keybind = super+e=text:\x13\" 
+# Split tmux window horizontally
+keybind = super+shift+e=text:\x13% 
+
 # custom-shader = ~/.config/ghostty/shaders/animated-gradient-shader.glsl
 # custom-shader = ~/.config/ghostty/shaders/bettercrt.glsl
 # custom-shader = ~/.config/ghostty/shaders/blaze_sparks.glsl
